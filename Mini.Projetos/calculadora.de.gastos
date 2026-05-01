@@ -6,10 +6,18 @@ produto = input ('O que quer produzir? ')
 while True:
     print('-=-'*20)
     nome = input ('Produto: ')
-    preço = float ( input ('Preço: '))
-    peso = float ( input ('Peso(kg/uni): '))
-    usou = float ( input ('Quanto usou(kg/uni): '))
-    print('-=-'*20)
+    
+    try:
+        preço = float(input('Preço: '))
+        peso = float(input('Peso(kg/uni): '))
+        usou = float(input('Quanto usou(kg/uni): '))
+    except ValueError:
+        print("Erro: digite apenas números.")
+        continue
+
+    if peso == 0:
+        print(f"Erro: Peso não pode ser zero. O {nome} não será adicionado.")
+        continue
 
     media = (preço / peso)
     final = (media * usou)
