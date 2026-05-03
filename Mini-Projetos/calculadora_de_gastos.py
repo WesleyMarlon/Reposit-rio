@@ -15,6 +15,9 @@ while True:
         print("Nessa parte digite apenas números")
         continue
 
+    if preco < 0 or peso <= 0 or usou < 0:
+        print("Opa, usa só números positivos aqui.")
+        continue
     if peso == 0:
         print(f"Opa, peso não pode ser zero. Tenta de novo com o peso total do pacote.")
         continue
@@ -54,10 +57,14 @@ print('-=-'*20)
 lucro = input('Quer calcular preço de venda? [S/N]: ').upper()
 if lucro == 'S':
     margem = float(input('Qual % de lucro quer ter? Ex: 100 pra dobrar: '))
-    preco_venda = total * (1 + margem/100)
-    unidade = int(input('Vai render quantos produtos? '))
-    print(f'Custo total para fazer: R$ {total:.2f}')
-    print(f'Vendendo por R$ {preco_venda:.2f} você lucra {margem}% ({preco_venda-total:.2f})')
-    print(f'Vendendo {unidade} unidade(s) você vai lucrar no total: R$ {(preco_venda*unidade):.2f}')
-    print (f'Entretanto, seu lucro real vai ser: R$ {(total*unidade):.2f}')
-print('-=-'*20)
+    rende = int(input('Quantos produtos a receita rende? '))
+    
+    preco_venda_total = total * (1 + margem/100)
+    preco_unidade = preco_venda_total / rende
+    total_unidade = total / rende
+    
+    print(f'\nCusto da receita: R$ {total:.2f}')
+    print(f'Venda tudo por: R$ {preco_venda_total:.2f}')
+    print(f'Preço por unidade: R$ {preco_unidade:.2f}')
+    print(f'Lucro real total de R$ {preco_venda_total - total:.2f}')
+    print(f'Lucro real por unidade de R$ {preco_unidade - total_unidade:.2f}')
