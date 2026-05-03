@@ -24,7 +24,7 @@ while True:
     nome = input ('Ingrediente: ')
     
     try:
-        preco = float(input('Preço: '))
+        preco = float(input('Preço R$: '))
         peso = float(input('Peso(kg/uni): '))
         usou = float(input('Quanto usou(kg/uni): '))
     except ValueError:
