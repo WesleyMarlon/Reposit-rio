@@ -6,6 +6,9 @@ produto = input ('O que quer produzir? ')
 while True:
     print('-=-'*20)
     nome = input ('Ingrediente: ')
+    if not nome:
+        print("Nome não pode ser vazio")
+        continue
     
     try:
         preco = float(input('Preço R$: '))
