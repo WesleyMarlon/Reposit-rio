@@ -1,6 +1,6 @@
 dados = []
 total = 0
-
+print('-=-'*20)
 produto = input ('O que quer produzir? ')
 
 while True:
@@ -49,4 +49,15 @@ print (f'O produto "{produto}" custou no total "{total:.2f}" para ser feito.')
 print (f'Igredientes: ')
 for lista in dados:
     print (f"• {lista['nome']}")
+print('-=-'*20)
+
+lucro = input('Quer calcular preço de venda? [S/N]: ').upper()
+if lucro == 'S':
+    margem = float(input('Qual % de lucro quer ter? Ex: 100 pra dobrar: '))
+    preco_venda = total * (1 + margem/100)
+    unidade = int(input('Vai render quantos produtos? '))
+    print(f'Custo total para fazer: R$ {total:.2f}')
+    print(f'Vendendo por R$ {preco_venda:.2f} você lucra {margem}% ({preco_venda-total:.2f})')
+    print(f'Vendendo {unidade} unidade(s) você vai lucrar no total: R$ {(preco_venda*unidade):.2f}')
+    print (f'Entretanto, seu lucro real vai ser: R$ {(total*unidade):.2f}')
 print('-=-'*20)
