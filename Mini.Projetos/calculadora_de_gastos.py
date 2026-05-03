@@ -1,12 +1,3 @@
-# Calculadora de Custo de Salgados
-   
-# Fiz pra minha mãe que produz salgados para calcular o gasto real por receita.
-   
-   ## Como usar
-#   1. Coloque o nome do produto que quer produzir
-#   2. Digita: ingredientes, preço, peso e quanto usou
-#   3. Exemplo: Ing = Trigo, pre = 14(reais), pes = 5 (5kg de trigo por 14 reais) e usou = 0.3 (foram usadas 300g dos 5kg de trigo)
-
 dados = []
 total = 0
 
@@ -17,7 +8,7 @@ while True:
     nome = input ('Ingrediente: ')
     
     try:
-        preço = float(input('Preço: '))
+        preco = float(input('Preço: '))
         peso = float(input('Peso(kg/uni): '))
         usou = float(input('Quanto usou(kg/uni): '))
     except ValueError:
@@ -28,7 +19,7 @@ while True:
         print(f"Erro: Peso não pode ser zero. O produto: '{nome}' não será adicionado.")
         continue
 
-    media = (preço / peso)
+    media = (preco / peso)
     final = (media * usou)
     total += final
 
@@ -49,7 +40,7 @@ while True:
 #mostrar
 for lista in dados:
     print('-=-'*20)
-    print(f"Usando {lista['usou']}(kg/uni) de {lista['nome']} custou no total ${lista['final']:.2f}")
+    print(f"Usando {lista['usou']}(kg/uni) de {lista['nome']} custou no total R$ {lista['final']:.2f}")
 print('-=-'*20)
 
 #final
