@@ -23,27 +23,27 @@ while True:
     final = (media * usou)
     total += final
 
-#criando dicionário
+
     lista = {
         'nome': nome,
         'final': final,
         'usou': usou
     }
     dados.append(lista)
-#Continuar ou não
+
     res = input ('Quer continuar? [S/N]: ').upper()
     while res not in ['S','N']:
         res = input ('Quer continuar? [S/N]: ').upper()
     if res == 'N':
         break
 
-#mostrar
+
 for lista in dados:
     print('-=-'*20)
     print(f"Usando {lista['usou']}(kg/uni) de {lista['nome']} custou no total R$ {lista['final']:.2f}")
 print('-=-'*20)
 
-#final
+
 print('-=-'*20)
 print (f'O produto "{produto}" custou no total "{total:.2f}" para ser feito.')
 print (f'Igredientes: ')
