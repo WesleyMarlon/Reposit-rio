@@ -12,11 +12,11 @@ while True:
         peso = float(input('Peso(kg/uni): '))
         usou = float(input('Quanto usou(kg/uni): '))
     except ValueError:
-        print("Erro: digite apenas números.")
+        print("Nessa parte digite apenas números")
         continue
 
     if peso == 0:
-        print(f"Erro: Peso não pode ser zero. O produto: '{nome}' não será adicionado.")
+        print(f"Opa, peso não pode ser zero. Tenta de novo com o peso total do pacote.")
         continue
 
     media = (preco / peso)
