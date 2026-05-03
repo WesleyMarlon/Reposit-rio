@@ -16,10 +16,10 @@ while True:
         continue
 
     if preco < 0 or peso <= 0 or usou < 0:
-        print("Opa, usa só números positivos aqui.")
+        print(f"Opa, usa só números positivos aqui. O '{nome}' não será adicionado.")
         continue
     if peso == 0:
-        print(f"Opa, peso não pode ser zero. Tenta de novo com o peso total do pacote.")
+        print(f"Opa, peso não pode ser zero. O '{nome}' não será adicionado.")
         continue
 
     media = (preco / peso)
