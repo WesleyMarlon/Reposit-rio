@@ -15,7 +15,7 @@ while True:
         peso = float(input('Peso(kg/uni): '))
         usou = float(input('Quanto usou(kg/uni): '))
     except ValueError:
-        print("Nessa parte digite apenas números")
+        print(f"Houve um erro no valor digitado. O '{nome}' não será adicionado.")
         continue
 
     if preco < 0 or peso <= 0 or usou < 0:
