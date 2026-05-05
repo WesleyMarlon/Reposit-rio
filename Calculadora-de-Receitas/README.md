@@ -1,4 +1,4 @@
-# Calculadora de Custo de Salgados
+# Calculadora de Receitas
 
 Projeto feito pra minha mãe calcular o custo real de cada receita de salgado.
 
